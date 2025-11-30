@@ -24,7 +24,7 @@ searchInput.addEventListener("input", async function () {
     return;
   }
 
-   const res = await fetch(`http://backend-medical-shop2-production.up.railway.app/search?q=${name}`);
+   const res = await fetch(`http://backend-medical-shop2-production.up.railway.app/search?q=${query}`);
   const data = await res.json();
 
   suggestionBox.innerHTML = data
@@ -104,3 +104,4 @@ async function submitOrder() {
 
   closeOrderForm();
 }
+
