@@ -24,7 +24,7 @@ searchInput.addEventListener("input", async function () {
     return;
   }
 
-   const res = await fetch(`http://backend-medical-shop2-production.up.railway.app/search?q=${query}`);
+   const res = await fetch(`https://backend-medical-shop2-production.up.railway.app/search?q=${query}`);
   const data = await res.json();
 
   suggestionBox.innerHTML = data
@@ -33,7 +33,7 @@ searchInput.addEventListener("input", async function () {
 });
 
 async function selectProduct(name) {
-  const res = await fetch(`http://backend-medical-shop2-production.up.railway.app/search?q=${name}`);
+  const res = await fetch(`https://backend-medical-shop2-production.up.railway.app/search?q=${name}`);
   const data = await res.json();
 
   console.log(data); // later display product card
@@ -42,7 +42,7 @@ async function selectProduct(name) {
 }
 
 async function loadAllProducts() {
-  const res = await fetch("http://backend-medical-shop2-production.up.railway.app/products");
+  const res = await fetch("https://backend-medical-shop2-production.up.railway.app/products");
   const data = await res.json();
 
   let html = "";
@@ -93,7 +93,7 @@ async function submitOrder() {
     address
   };
 
-  const res = await fetch("http://backend-medical-shop2-production.up.railway.app/order", {
+  const res = await fetch("https://backend-medical-shop2-production.up.railway.app/order", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(orderData)
@@ -104,4 +104,5 @@ async function submitOrder() {
 
   closeOrderForm();
 }
+
 
